@@ -1,0 +1,4 @@
+name: NpcPlugin
+version: '0.0.1'
+main: com.Relxwe.npcPlugin.NpcPlugin
+api-version: '1.18'
