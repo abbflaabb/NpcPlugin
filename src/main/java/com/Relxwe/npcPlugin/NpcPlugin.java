@@ -1,27 +1,35 @@
 package com.Relxwe.npcPlugin;
 
+
+import com.Relxwe.npcPlugin.API.NPC;
+import com.Relxwe.npcPlugin.Commands.NPCCommand;
+import com.Relxwe.npcPlugin.storage.NPCStorage;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.List;
 
-public final class NpcPlugin extends JavaPlugin {
-
-    public Logger logger;
-
+public class NpcPlugin extends JavaPlugin {
+    private final List<NPC> npcs = new ArrayList<>();
 
     @Override
     public void onEnable() {
-        logger.info("NpcPlugin has been enabled!");
-        // Plugin startup logic
-        this.logger = this.getLogger();
-        // Register commands, events, etc.
-
+        getCommand("npc").setExecutor(new NPCCommand(this));
+        getServer().getPluginManager().registerEvents(new NPCEntityListener(npcs), this);
+        NPCStorage.loadNPCs(this);
     }
 
     @Override
     public void onDisable() {
-        logger.info("NpcPlugin has been disabled!");
-        // Plugin shutdown logic
-        // Clean up resources, save data, etc.
+        for (NPC npc : npcs) {
+            if (npc instanceof SimpleNPC) ((SimpleNPC) npc).despawn();
+        }
+        NPCStorage.saveNPCs(this, npcs);
+    }
+
+    public void addNPC(NPC npc) { npcs.add(npc); }
+    public void removeNPC(NPC npc) { npcs.remove(npc); }
+    public List<NPC> getNPCs() {
+        return npcs;
     }
 }
