@@ -1,9 +1,13 @@
 package com.Relxwe.npcPlugin.API;
 
+import org.bukkit.Location;
+import org.bukkit.World;
+
 public interface NPC {
     String getId();
     String getName();
-    void setName(String name);
-    String getSkinTexture();
     void setSkinTexture(String skinTexture);
+    void spawn(World world, Location location);
+    void despawn();
 }
+
