@@ -31,7 +31,7 @@ public class NPCStorage {
     public NPCStorage(NpcPlugin plugin) {
         this.plugin = plugin;
         this.gson = new GsonBuilder().setPrettyPrinting().create();
-        this.storageFile = new File(plugin.getDataFolder(), "npcs.json");
+        this.storageFile = new File(plugin.getDataFolder(), "npcs.yml");
 
         if (!plugin.getDataFolder().exists()) {
             plugin.getDataFolder().mkdirs();

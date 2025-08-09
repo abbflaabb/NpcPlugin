@@ -1,0 +1,13 @@
+com\Relxwe\npcPlugin\Commands\NPCCommand.class
+com\Relxwe\npcPlugin\storage\NPCStorage.class
+com\Relxwe\npcPlugin\SimpleNPC.class
+com\Relxwe\npcPlugin\storage\NPCStorage$NPCData.class
+com\Relxwe\npcPlugin\SkinFetcher.class
+com\Relxwe\npcPlugin\versions\v1_8_R3\VersionHandlerImpl.class
+com\Relxwe\npcPlugin\utils\VersionUtils.class
+com\Relxwe\npcPlugin\versions\v1_12_R1\VersionHandlerImpl.class
+com\Relxwe\npcPlugin\storage\NPCStorage$1.class
+com\Relxwe\npcPlugin\SkinFetcher$SkinData.class
+com\Relxwe\npcPlugin\API\VersionHandler.class
+com\Relxwe\npcPlugin\NpcPlugin.class
+com\Relxwe\npcPlugin\API\NPC.class

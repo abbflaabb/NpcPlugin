@@ -6,4 +6,4 @@ api-version: '1.18'
 commands:
   npc:
     description: NPC Plugin commands.
-    usage: /<command> [create|list]
+    usage: /<command> [create|list|delete]
